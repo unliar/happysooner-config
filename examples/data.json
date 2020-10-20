@@ -1,0 +1,16 @@
+{
+  "mysql": {
+    "host": "111.111.111.11",
+    "port": 3316,
+    "user": "root",
+    "password": "22.22.222.22"
+  },
+  "redis": {
+    "host": "redis.com",
+    "port": 6379,
+    "password": "33dsdsdd"
+  },
+  "smtp":{
+    "password": "1234"
+  }
+}
