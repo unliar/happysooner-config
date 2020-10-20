@@ -1,6 +1,7 @@
 # github.com/unliar/happysooner-config ![test](https://github.com/unliar/happysooner-config/workflows/test/badge.svg)
-> 这是一个从 kv 读取 配置的lib
 
+> go-micro read config from kv/file/... and scan to struct
 
-## 使用
-> 参见 examples 或者 index_test.go
+## how to use
+
+> look for examples or index_test.go
