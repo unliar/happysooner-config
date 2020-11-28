@@ -50,3 +50,13 @@ func TestConf_GetRedis(t *testing.T) {
 		t.Error(errors.New("redis 错误的端口读取"))
 	}
 }
+
+func TestConf_GetNSQ(t *testing.T) {
+	r, err := c.GetMySQL("nsq")
+	if err != nil {
+		t.Error(err)
+	}
+	if r.Port != 499 {
+		t.Error(errors.New("nsq 错误的端口读取"))
+	}
+}

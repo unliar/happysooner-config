@@ -21,3 +21,8 @@ type SMTP struct {
 	User     string `json:"user"`
 	Password string `json:"password"`
 }
+
+type NSQ struct {
+	Host string `json:"host"`
+	Port int    `json:"port"`
+}

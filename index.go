@@ -40,6 +40,16 @@ func (c *Conf) GetSMTP(path ...string) (*SMTP, error) {
 	return &m, nil
 }
 
+// 获取 NSQ 配置
+func (c *Conf) GetNSQ(path ...string) (*NSQ, error) {
+	m := NSQ{}
+	err := c.Init.Get(path...).Scan(&m)
+	if err != nil {
+		return &m, err
+	}
+	return &m, nil
+}
+
 func NewHappyDefaultConf() (Conf, error) {
 	conf, _ := config.NewConfig()
 	consulSrc := consul.NewSource(
