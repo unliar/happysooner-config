@@ -12,3 +12,18 @@ jobs:
         with:
           go-version: "^1.14.0"
       - run: go test
+      - name: wechat-work-bot-success
+        uses: chf007/action-wechat-work@master
+        env:
+            WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+            msgtype: markdown
+            content: "#### ✅ [${{github.repository}}](https://github.com/${{github.repository}})  go test 成功"
+      - name: wechat-work-bot-failed
+        if: ${{ failure() }}
+        uses: chf007/action-wechat-work@master
+        env:
+            WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+        with:
+            msgtype: markdown
+            content: "#### ❎ [${{github.repository}}](https://github.com/${{github.repository}}) go test 失败"
