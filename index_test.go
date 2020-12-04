@@ -60,3 +60,13 @@ func TestConf_GetNSQ(t *testing.T) {
 		t.Error(errors.New("nsq 错误的端口读取"))
 	}
 }
+
+func TestConf_GetWechatMP(t *testing.T) {
+	r, err := c.GetWechatMP("mp")
+	if err != nil {
+		t.Error(err)
+	}
+	if r.AppID != "2222" {
+		t.Error(errors.New("GetWechatMP 错误的 AppID"))
+	}
+}
