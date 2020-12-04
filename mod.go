@@ -20,9 +20,15 @@ type SMTP struct {
 	Host     string `json:"host"`
 	User     string `json:"user"`
 	Password string `json:"password"`
+	Port     int    `json:"port"`
 }
 
 type NSQ struct {
 	Host string `json:"host"`
 	Port int    `json:"port"`
+}
+
+type WechatMP struct {
+	AppID      string `json:"appId"`
+	TemplateID string `json:"templateId"`
 }

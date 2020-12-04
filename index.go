@@ -50,6 +50,16 @@ func (c *Conf) GetNSQ(path ...string) (*NSQ, error) {
 	return &m, nil
 }
 
+// 获取微信公众号 配置
+func (c *Conf) GetWechatMP(path ...string) (*WechatMP, error) {
+	m := WechatMP{}
+	err := c.Init.Get(path...).Scan(&m)
+	if err != nil {
+		return &m, err
+	}
+	return &m, nil
+}
+
 func NewHappyDefaultConf() (Conf, error) {
 	conf, _ := config.NewConfig()
 	consulSrc := consul.NewSource(
